@@ -1,6 +1,7 @@
 package com.userfront.domain;
 
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -81,5 +82,23 @@ public class Appointment {
                 ", description='" + description + '\'' +
                 ", user=" + user +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Appointment that = (Appointment) o;
+        return confirmed == that.confirmed &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(date, that.date) &&
+                Objects.equals(location, that.location) &&
+                Objects.equals(description, that.description) &&
+                Objects.equals(user, that.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, date, location, description, confirmed, user);
     }
 }

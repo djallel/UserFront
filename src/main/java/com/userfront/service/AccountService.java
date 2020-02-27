@@ -1,11 +1,9 @@
 package com.userfront.service;
 
-import java.security.Principal;
-
 import com.userfront.domain.PrimaryAccount;
-import com.userfront.domain.PrimaryTransaction;
 import com.userfront.domain.SavingsAccount;
-import com.userfront.domain.SavingsTransaction;
+
+import java.security.Principal;
 
 public interface AccountService {
 	PrimaryAccount createPrimaryAccount();
