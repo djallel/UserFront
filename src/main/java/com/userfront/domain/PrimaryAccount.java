@@ -1,17 +1,11 @@
 package com.userfront.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.Objects;
 
 @Entity
 public class PrimaryAccount {
@@ -58,7 +52,37 @@ public class PrimaryAccount {
         this.primaryTransactionList = primaryTransactionList;
     }
 
+    public PrimaryAccount() {
+    }
 
+    public PrimaryAccount( Long id, int accountNumber, BigDecimal accountBalance  ,List<PrimaryTransaction> primaryTransactionList) {
+        this.id= id;
+        this.accountNumber= accountNumber;
+        this.accountBalance= accountBalance;
+        this.primaryTransactionList= primaryTransactionList;
+    }
+
+    public PrimaryAccount( Long id, int accountNumber, BigDecimal accountBalance )  {
+        this.id= id;
+        this.accountNumber= accountNumber;
+        this.accountBalance= accountBalance;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PrimaryAccount that = (PrimaryAccount) o;
+        return accountNumber == that.accountNumber &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(accountBalance, that.accountBalance) &&
+                Objects.equals(primaryTransactionList, that.primaryTransactionList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, accountNumber, accountBalance, primaryTransactionList);
+    }
 }
 
 

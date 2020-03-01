@@ -20,12 +20,18 @@ import com.userfront.service.UserService;
 
 @Controller
 public class HomeController {
-	
-	@Autowired
+
+
+    @Autowired
 	private UserService userService;
 	
 	@Autowired
     private RoleDao roleDao;
+
+    public HomeController( UserService userService,RoleDao roleDao ) {
+        this.userService = userService;
+        this.roleDao= roleDao;
+    }
 	
 	@RequestMapping("/")
 	public String home() {

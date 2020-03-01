@@ -22,8 +22,8 @@ import com.userfront.service.UserService;
 @Controller
 @RequestMapping("/account")
 public class AccountController {
-	
-	@Autowired
+
+    @Autowired
     private UserService userService;
 	
 	@Autowired

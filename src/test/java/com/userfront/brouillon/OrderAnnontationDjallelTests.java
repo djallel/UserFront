@@ -1,4 +1,4 @@
-package com.userfront;
+package com.userfront.brouillon;
 
 import com.userfront.brouillon.ordered.Average;
 import com.userfront.brouillon.ordered.Excellent;
@@ -24,7 +24,7 @@ import static org.junit.Assert.assertThat;
 
 @SpringBootTest
 @RunWith(MockitoJUnitRunner.class)
-public class MethodeDjallelTests {
+public class OrderAnnontationDjallelTests {
 
     @Mock
     private List<Rating> ratings;
