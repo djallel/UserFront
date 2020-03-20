@@ -5,7 +5,7 @@ import com.userfront.UserFrontApplication;
 import com.userfront.domain.PrimaryAccount;
 import com.userfront.service.TransactionService;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.Ignore;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -36,7 +36,7 @@ public class PrimaryAccountDaoDjallelTests extends DataTest {
 
     }
 
-    @Test
+    @Ignore
     public void createPrimaryAccount_shouldReturnPrimaryAccount() throws Exception {
 
         primaryAccount = getPrimaryAccount();

@@ -54,11 +54,8 @@ public class AccountServiceDjallelTests extends DataTest {
 
         primaryAccount = getPrimaryAccount();
 
-        PrimaryAccount save = primaryAccountDao.save(primaryAccount);
         Mockito.when(primaryAccountDao.save(any(PrimaryAccount.class))).thenReturn(primaryAccount);
         Mockito.when(primaryAccountDao.findByAccountNumber(anyInt())).thenReturn(primaryAccount);
-        PrimaryAccount save1 = primaryAccountDao.save(primaryAccount);
-//        PrimaryAccount result = primaryAccountDao.findByAccountNumber(save.getAccountNumber());
         PrimaryAccount result = accountService.createPrimaryAccount();
         assertThat(result).isNotNull();
         assertThat(result).isEqualToComparingFieldByField(getPrimaryAccount());
