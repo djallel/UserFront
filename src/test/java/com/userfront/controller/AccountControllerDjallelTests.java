@@ -9,7 +9,7 @@ import com.userfront.service.AccountService;
 import com.userfront.service.TransactionService;
 import com.userfront.service.UserService;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.Ignore;
 import org.mockito.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -58,7 +58,7 @@ public class AccountControllerDjallelTests extends DataTest {
 
     }
 
-    @Test
+    @Ignore
     public void primaryAccount_ShouldAddprimaryAccountEntriesAndprimaryTransactionListToModelAndRenderprimaryAccountView() throws Exception {
 
         PrimaryTransaction PrimaryTransaction1 = getPrimaryTransaction();
